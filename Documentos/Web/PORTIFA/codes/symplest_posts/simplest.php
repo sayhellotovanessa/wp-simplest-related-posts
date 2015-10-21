@@ -21,13 +21,14 @@ if ($tags):
   $related_posts = $wpdb->get_results($query, OBJECT); 
   if($related_posts): ?>
     <div class="simplest-posts">  
-      <h3>Related posts</h3> 
+      <h3>Read more posts:</h3> 
       <?php foreach($related_posts as $post): ?>
         <?php setup_postdata($post); ?>
         <div class="simplest-thumb">  
           <a href="<?php the_permalink()?>">
-            <?php the_post_thumbnail('medium'); ?><br/>
-            <?php the_title(); ?>
+            <?php the_post_thumbnail('small'); ?><br/>
+            <?php the_title(); ?><br/>
+            <?php the_author(); ?>
           </a>  
         </div>  
       <?php endforeach; ?>
